@@ -12,7 +12,7 @@ const gulp = require('gulp'),
 
 ///////// PUG plugons
 gulp.task('pug', function () {
-    return gulp.src('blocks*.pug')
+    return gulp.src('blocks/*.pug')
         .pipe(pug({
             pretty: true
         }))
@@ -76,17 +76,17 @@ gulp.task('html-prod', function () {
 gulp.task('server', function() {
     browserSync.init({
         server: {
-            baseDir: "./bild"
+            baseDir: "app/"
         }
     });
-    browserSync.watch("./bild", browserSync.reload)
+    browserSync.watch("app/", browserSync.reload)
 });
 
 
 /////////// WATCHER
 gulp.task('watch', function () {
-    gulp.watch('app/pug/**/*.pug', gulp.series('pug'));
-    gulp.watch('app/sass/**/*.scss', gulp.series('sass'))
+    gulp.watch('blocks/**/*.pug', gulp.series('pug'));
+    gulp.watch('blocks/**/*.scss', gulp.series('sass'))
 });
 
 
