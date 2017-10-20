@@ -7,12 +7,14 @@ const gulp = require('gulp'),
       autoprefixer  = require('gulp-autoprefixer'),
       csso          = require('gulp-csso'),
       notify        = require('gulp-notify'),
+      plumber       = require('gulp-pumber'),
       browserSync = require('browser-sync').create();
 
 
 ///////// PUG plugons
 gulp.task('pug', function () {
     return gulp.src('blocks/*.pug')
+        .pipe(plumber())
         .pipe(pug({
             pretty: true
         }))
@@ -27,6 +29,7 @@ gulp.task('pug', function () {
 ///////// SASS plugins
 gulp.task('sass', function () {
     return gulp.src('blocks/*.scss')
+        .pipe(plumber())
         .pipe(sourcemaps.init())
         .pipe(sass())
         .pipe(autoprefixer({
@@ -44,6 +47,7 @@ gulp.task('sass', function () {
 
 gulp.task('css-prod', function () {
     return gulp.src('css/*.css')
+        .pipe(plumber())
         .pipe(sourcemaps.init())
         .pipe(autoprefixer({
             browsers: ['last 5 versions'],
@@ -61,6 +65,7 @@ gulp.task('css-prod', function () {
 
 gulp.task('html-prod', function () {
     return gulp.src('app/*.html')
+        .pipe(plumber())
         .pipe(sourcemaps.init())
         .on("error", notify.onError({
             message: "Error: <%= error.message %>",
