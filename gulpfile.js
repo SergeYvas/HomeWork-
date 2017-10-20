@@ -13,7 +13,7 @@ const gulp = require('gulp'),
 
 ///////// PUG plugons
 gulp.task('pug', function () {
-    return gulp.src('blocks/*.pug','blocks/template.pug')
+    return gulp.src('blocks/*.pug',!'blocks/template.pug')
         .pipe(plumber())
         .pipe(pug({
             pretty: true
