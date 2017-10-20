@@ -2,6 +2,8 @@
 include _head/head
 include footer/footer
 include header/header
+include navigatin/navigation
+
 
 
 
@@ -17,7 +19,8 @@ html(lang="ru")
         .wrapper
             block header
                 +header
-
+            .container
+                +navigation
             block footer
                 +footer
 
