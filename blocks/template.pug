@@ -1,6 +1,10 @@
 
 include _head/head
 include footer/footer
+include header/header
+
+
+
 doctype html
 html(lang="ru")
     block head
@@ -11,8 +15,8 @@ html(lang="ru")
 
     body
         .wrapper
-            block content
-                div content
+            block header
+                +header
 
             block footer
                 +footer
