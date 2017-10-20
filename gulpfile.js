@@ -7,13 +7,13 @@ const gulp = require('gulp'),
       autoprefixer  = require('gulp-autoprefixer'),
       csso          = require('gulp-csso'),
       notify        = require('gulp-notify'),
-      plumber       = require('gulp-pumber'),
+      plumber       = require('gulp-plumber'),
       browserSync = require('browser-sync').create();
 
 
 ///////// PUG plugons
 gulp.task('pug', function () {
-    return gulp.src('blocks/*.pug')
+    return gulp.src('blocks/*.pug','blocks/template.pug')
         .pipe(plumber())
         .pipe(pug({
             pretty: true
