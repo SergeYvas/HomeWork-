@@ -2,9 +2,22 @@ $container-width: 1420px;
 $footer-height: 56px;
 $header-footer-color: #464547;
 $main-fonts:  Oswald, sans-serif;
+$main-transition: .5s;
 
+@mixin oswald ($weight) {
+  font-family: Oswald, sans-serif;
+  font-weight: $weight;
+}
+@mixin source-Sans-Pro ($weight) {
+  font-family: Source Sans Pro, sans-serif;
+  font-weight: $weight;
+}
 
 //layout
 @import "_assets/normalize";
 @import "_assets/adjustment";
+
+
+//blocks
+@import "footer/footer";
 

@@ -2,6 +2,7 @@ body, html{
   height: 100%;
   width: 100%;
   font-family: $main-fonts;
+  font-size: 14px;
 }
 
 .wrapper{
@@ -18,7 +19,7 @@ body, html{
 
 }
 .footer{
-  height: $footer-height;
+  min-height: $footer-height;
   background-color: $header-footer-color;
   flex: 0 0 auto;
 }
