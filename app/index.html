@@ -57,7 +57,7 @@
         </nav>
         <main class="main-content">
           <div class="tools">
-            <ul class="button_list">
+            <div class="button_list">
               <li class="button_item"><a class="button button-create" href="#" title="Create document">Create document</a>
                 <ul class="button-menu_list">
                   <li class="button-menu_item"><a class="button-menu_link" href="#">Incoming documents</a></li>
@@ -102,7 +102,19 @@
                   </li>
                 </ul>
               </li>
-            </ul>
+            </div>
+            <div class="document-search">
+              <form method="POST" action="#">
+                <label class="document-search_label">
+                  <input class="document-search_input" type="search" placeholder="Search"/>
+                  <ul class="document-search_grop">
+                    <li class="document-search_item"><a class="document-search_link more_link" href="#"><i class="fa fa-caret-down" aria-hidden="true"></i></a></li>
+                    <li class="document-search_item"><a class="document-search_link options_link" href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>
+                    <li class="document-search_item"><a class="document-search_link advancedt-search_link" href="#"><i class="fa fa-search-plus" aria-hidden="true"></i></a></li>
+                  </ul>
+                </label>
+              </form>
+            </div>
           </div>
         </main>
       </section>

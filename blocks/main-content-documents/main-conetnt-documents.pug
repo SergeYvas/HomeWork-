@@ -1,35 +1,6 @@
 include button/buttons-menu
+include document-search/document-search
 mixin main-content-documents
     .tools
-        ul.button_list
-            li.button_item
-                a(href='#' title='Create document').button.button-create Create document
-                ul.button-menu_list
-                    li.button-menu_item
-                        a(href="#").button-menu_link Incoming documents
-                    li.button-menu_item
-                        a(href="#").button-menu_link Outgoing documents
-                    li.button-menu_item
-                        a(href="#").button-menu_link Fax documents
-                    li.button-menu_item
-                        a(href="#").button-menu_link Warrant
-                    li.button-menu_item
-                        a(href="#").button-menu_link Job description
-                    li.button-menu_item
-                        a(href="#").button-menu_link Contacts
-                        +buttons-menu(create)
-            li.button_item
-                a(href='#' title='Attach document').button.button-attach Attach document
-                ul.button-menu_list
-                    li.button-menu_item
-                        a(href="#").button-menu_link Contact
-                    li.button-menu_item
-                        a(href="#").button-menu_link Annex
-                        +buttons-menu(attach)
-
-
-
-
--var create = ['Act of acceptance of property or rooms','Price negotiation protocol',' Estimate ','Requirements specification, project, scheme, layout or another task Payment schedule ','Work/services fulfillment schedule ','Protocol of disagreements Disagreements settlement protocol ','Certificate of cost of the performed work', 'Acts of acceptance of performed works / rendered services ','Supply contracts specifications', 'Acts of acceptance of the rendered services (software development) ','Act of acceptance of the rights for the computer program Other']
--var attach = ['Act of acceptance of property or rooms',' Price negotiation protocol',' Estimate ','Requirements specification, project, scheme, layout or another task Payment schedule ','Work/services fulfillment schedule ','Protocol of disagreements Disagreements settlement protocol ','Certificate of cost of the performed work', 'Acts of acceptance of performed works / rendered services ','Supply contracts specifications', 'Acts of acceptance of the rendered services (software development) ','Act of acceptance of the rights for the computer program Other']
-
+        +button-list
+        +document-search

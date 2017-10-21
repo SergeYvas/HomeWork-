@@ -1,0 +1,15 @@
+mixin document-search
+    .document-search
+        form(method="POST" action="#")
+            label.document-search_label
+                input(type="search" placeholder="Search").document-search_input
+                ul.document-search_grop
+                    li.document-search_item
+                        a(href="#").document-search_link.more_link
+                            i(class="fa fa-caret-down" aria-hidden="true")
+                    li.document-search_item
+                        a(href="#").document-search_link.options_link
+                            i(class="fa fa-search" aria-hidden="true")
+                    li.document-search_item
+                        a(href="#").document-search_link.advancedt-search_link
+                            i(class="fa fa-search-plus" aria-hidden="true")
