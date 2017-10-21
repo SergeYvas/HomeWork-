@@ -3,6 +3,7 @@ include _head/head
 include footer/footer
 include header/header
 include navigatin/navigation
+include main-content-documents/main-conetnt-documents
 
 
 
@@ -21,6 +22,10 @@ html(lang="ru")
                 +header
             section.container.content
                 +navigation
+                main.main-content
+                    block main
+                        main main
+
             block footer
                 +footer
 

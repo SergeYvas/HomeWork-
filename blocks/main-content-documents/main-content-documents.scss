@@ -1,0 +1,82 @@
+@import "button/buttons-menu";
+.main-content{
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  box-sizing: border-box;
+  padding-top: 20px;
+  padding-left: 15px;
+}
+.tools{
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+}
+.button_list{
+  display: flex;
+  flex-direction: row;
+  align-content: flex-start;
+}
+.button_item{
+  margin-right: 5px;
+}
+.button{
+  text-align: center;
+  line-height: 38px;
+  display: block;
+  height: 38px;
+  width: 193px;
+  text-decoration: none;
+  color: #ffffff;
+  @include source-Sans-Pro(400);
+  position: relative;
+  opacity: 0.8;
+  transition: $main-transition;
+  background-color: green;
+  &:hover {
+    opacity: 1;
+  }
+  &:after {
+    content: "";
+    top: 50%;
+    right: 18px;
+    position: absolute;
+    display: inline-block;
+    border-right: 6px solid transparent;
+    border-left: 6px solid transparent;
+    border-bottom: 6px solid transparent;
+    border-top: 6px solid #ffffff;
+    transform: translate(0, -19%);
+  }
+  $icons-btn: (
+          'create':'\f016 ',
+          'attach':'\f0c6 ',
+  );
+  @each $name, $text in $icons-btn {
+    &-#{$name} {
+      &:before {
+        display: inline-block;
+        position: absolute;
+        left: 15px;
+        top: 50%;
+        transform: translate(-21%, -45%);
+        width: 25px;
+        height: 25px;
+        color: inherit;
+        content: "#{$text}";
+        font: normal normal normal 81px FontAwesome;
+        font-size: 22px;
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+    }
+  }
+}
+.button-create{
+  background-color: #a3c644;
+}
+.button-attach{
+  background-color: #ecc134;
+
+}
