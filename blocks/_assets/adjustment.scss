@@ -5,6 +5,13 @@ body, html{
   font-size: 14px;
 }
 
+.container{
+   display: flex;
+   flex-wrap: nowrap;
+   margin: 0 auto;
+   width: $container-width;
+ }
+
 .wrapper{
   display: flex;
   position: relative;
@@ -13,23 +20,16 @@ body, html{
   justify-content: space-between;
   overflow-x: hidden;
   background-color: #ffffff;
-  .container{
-    flex: 1;
-    flex-direction: row;
-  }
+}
+.content{
+  flex: 1;
+  flex-direction: row;
 }
 
 .footer{
   min-height: $footer-height;
   background-color: $header-footer-color;
   flex: 0 0 auto;
-}
-
-.container{
-  display: flex;
-  flex-wrap: nowrap;
-  margin: 0 auto;
-  width: $container-width;
 }
 
 ul{
