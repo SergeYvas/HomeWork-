@@ -1,0 +1,22 @@
+mixin tabs
+    div.tabs
+        ul.tabs_trigger-group
+            li.tabs_trigger-item
+                a(href="#").tabs_button
+                    i(class="fa fa-pencil" aria-hidden="true")
+                    |created by me
+            li.tabs_trigger-item.active
+                a(href="#").tabs_button
+                    i(class="fa fa-clock-o" aria-hidden="true")
+                    |under my approval
+            li.tabs_trigger-item
+                a(href="#").tabs_button
+                    i(class="fa fa-users" aria-hidden="true")
+                    |sent for group
+        ul.tabs_content-group
+            li.tabs_content
+                |Это первый TAB
+            li.tabs_content.active
+                |Это второй TAB
+            li.tabs_content
+                |Это третий TAB

@@ -1,13 +1,13 @@
 .navigation{
   display: flex;
   flex-direction: column;
-  background-color: #39c2d7;
   width: 250px;
-
 }
+
 .navigation_list{
   transition: $main-transition;
 }
+
 .navigation_link{
   text-transform: uppercase;
   font-weight: 400;
@@ -26,6 +26,7 @@
   &:hover{
     background-color: #31a5b7;
   }
+
   $icons-aside:(
           'home':'\f015',
           'documents':'\f0f6',
@@ -34,6 +35,8 @@
           'nomenclature':'\f0ca',
           'organizations':'\f0f2'
   );
+
+
   @each $name, $text in $icons-aside {
     &_#{$name}{
       &:before {
@@ -62,6 +65,7 @@
       height: 388px;
     }
   }
+
   .navigation_list{
     height: 0;
     background-color: #e1f6f9;

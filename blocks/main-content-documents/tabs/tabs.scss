@@ -1,0 +1,45 @@
+.tabs{
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  border: 0.5px solid #666666;
+
+}
+.tabs_trigger-group{
+  display: flex;
+  flex-direction: row;
+  align-content: flex-start;
+  align-items: center;
+  background-color: #666666;
+}
+.tabs_trigger-item.active{
+  .tabs_button{
+    background-color: white;
+    color: #666666;
+  }
+}
+.tabs_button{
+  display: block;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 12px;
+  color: white;
+  padding: 10px 20px 10px 20px;
+  transition: $main-transition;
+  i{
+    margin-right: 11px;
+  }
+  &:hover{
+    background-color: white;
+    color: #666666;
+  }
+}
+.tabs_content{
+  position: absolute;
+  visibility: hidden;
+}
+.tabs_content.active{
+  position: relative;
+  visibility: visible;
+
+}
