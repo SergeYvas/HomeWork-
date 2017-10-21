@@ -1,4 +1,79 @@
+.navigation{
+  display: flex;
+  flex-direction: column;
+  background-color: #39c2d7;
+  width: 250px;
+
+}
+.navigation_list{
+  transition: $main-transition;
+}
 .navigation_link{
   text-transform: uppercase;
   font-weight: 400;
+  font-size: 14px;
+  border-bottom: 1px solid #5ecbdc;
+  display: flex;
+  align-items: center;
+  position: relative;
+  height: 47px;
+  color: white;
+  text-align: left;
+  text-decoration: none;
+  padding-right:1px;
+  transition: $main-transition;
+  padding-left: 10px;
+  &:hover{
+    background-color: #31a5b7;
+  }
+  $icons-aside:(
+          'home':'\f015',
+          'documents':'\f0f6',
+          'calendar':'\f073',
+          'archive':'\f187',
+          'nomenclature':'\f0ca',
+          'organizations':'\f0f2'
+  );
+  @each $name, $text in $icons-aside {
+    &_#{$name}{
+      &:before {
+        display: inline-block;
+        position: relative;
+        width: 25px;
+        height: 25px;
+        margin-right:6px;
+        color: inherit;
+        content: "#{$text}";
+        font: normal normal normal 81px FontAwesome;
+        font-size: 22px;
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+    }
+  }
+}
+
+
+.navigation_item{
+  &:hover{
+    .navigation_list {
+      transform: scaleY(1);
+      height: 388px;
+    }
+  }
+  .navigation_list{
+    height: 0;
+    background-color: #e1f6f9;
+    transform: scaleY(0);
+    transform-origin: 100% 0;
+    animation-timing-function: ease-in-out;
+    .navigation_link {
+      border-bottom: 1px solid #e1f6f9;
+      color: #7a7a7a;
+      &:hover {
+        background-color: #f0fafc;
+      }
+    }
+  }
 }
