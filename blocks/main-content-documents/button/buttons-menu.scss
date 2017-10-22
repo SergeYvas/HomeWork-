@@ -12,6 +12,8 @@
 }
 .button_item.active{
   &>.button-menu_list{
+    z-index: 1;
+    background-color: white;
     transform: scaleY(1);
   }
 }
@@ -37,6 +39,7 @@
 
 .button-menu_item{
   transition: $main-transition;
+  min-width: 193px;
   &.share{
     &>a:after {
       transition: $main-transition;
