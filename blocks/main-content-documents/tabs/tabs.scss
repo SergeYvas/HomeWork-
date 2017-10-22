@@ -1,8 +1,9 @@
+@import "table/table";
 .tabs{
   display: flex;
   flex-direction: column;
   flex: 1;
-  border: 0.5px solid #666666;
+  border: 1px solid #666666;
 
 }
 .tabs_trigger-group{
@@ -11,6 +12,10 @@
   align-content: flex-start;
   align-items: center;
   background-color: #666666;
+  &:first-child{
+    transform: translateX(-0.6px);
+
+  }
 }
 .tabs_trigger-item.active{
   .tabs_button{

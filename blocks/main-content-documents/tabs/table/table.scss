@@ -1,0 +1,92 @@
+.document-table {
+  @include source-Sans-Pro(700);
+  font-size: 14px;
+  color: black;
+  th, td {
+    text-align: left;
+    min-width: 85px;
+  }
+  tr:nth-child(2n) {
+    background-color: #f1f1f1;
+  }
+  td{
+    @include source-Sans-Pro(300);
+    text-align: left;
+    white-space: nowrap;
+    height: 40px;
+    padding-left: 8px;
+    &:first-child {
+      padding-left: 14px;
+    }
+  }
+
+  th{
+    box-sizing: border-box;
+    height: 50px;
+    vertical-align: bottom;
+    position: relative;
+    transition: .3s;
+    padding: 0 0 13px 9px;
+    cursor: pointer;
+    &:after{
+      content: "";
+      display: block;
+      background-color: #39c2d7;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      height: 3px;
+      width: 100%;
+      transform: scaleX(0);
+      transition: .3s;
+    }
+    &:hover{
+      color: #39c2d7;
+      &:after{
+        transform: scaleX(1);
+      }
+    }
+  }
+}
+
+th:first-child {
+  padding-left: 14px;
+  &:after{
+    width: 90%;
+  }
+}
+
+.documents-table_titel{
+  @include oswald(400);
+  font-size: 24px;
+  text-transform: uppercase;
+  margin-left: 14px;
+}
+.mark{
+  box-sizing: border-box;
+  display: block;
+  text-align: center;
+  align-items: center;
+  width: 68px;
+  height: 23px;
+  color: white;
+  @include source-Sans-Pro(400);
+  font-size: 12px;
+  padding-top: 2px;
+}
+.mark{
+  $marks:(
+          '.signed'   :'#a3c644',
+          '.deleted'  :'#eb6a5a',
+          '.changed'  :'#937ebd',
+          '.helded'   :'#999999',
+          '.approved' :'#39b7ac',
+          '.cancelled':'#b32746',
+          '.awaits'   :'#ecc134'
+  );
+  @each $mark, $color in $marks {
+    &#{$mark}{
+      background-color: #{$color};
+    }
+  }
+}

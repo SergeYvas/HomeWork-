@@ -1,3 +1,4 @@
+include table/table
 mixin tabs
     div.tabs
         ul.tabs_trigger-group
@@ -17,6 +18,6 @@ mixin tabs
             li.tabs_content
                 |Это первый TAB
             li.tabs_content.active
-                |Это второй TAB
+                +table()
             li.tabs_content
                 |Это третий TAB
