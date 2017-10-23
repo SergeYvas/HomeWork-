@@ -6,7 +6,11 @@
 
 filterOnChilde(document.getElementsByClassName("button-menu_item"));
 
-addedClass(document.getElementsByClassName("button_item"));
+buttonsMenu();
+noUrl(document.getElementsByClassName('button'));
+noUrl(document.getElementsByClassName('tabs_button'));
+
+
 
 function filterOnChilde(data) {
     for (var i = 0;i<data.length;i++) {
@@ -16,19 +20,59 @@ function filterOnChilde(data) {
     }
 }
 
-function addedClass(data) {
-    for (var i = 0;i<data.length;i++) {
-        data[i].onclick = function () {
-            var value = 'active';
-            if (this.classList.contains(value)) {
-                this.classList.remove(value);
-                 } else {
-                for (var i = 0;i<data.length;i++) {
-                    data[i].classList.remove(value)
-                }
-                this.classList.add(value)
-            }
+
+
+function noUrl(data) {
+    for(var i = 0; i < data.length; i++){
+        data[i].onclick = function(event) {
+    if (event.target.nodeName !== 'A') return;
+
+    var href = event.target.getAttribute('href');
+    return false;
+}}}
+
+
+
+
+
+
+
+
+
+function buttonsMenu() {
+
+
+    var buttons = document.getElementsByClassName('button');
+    console.log(buttons);
+    addCkass();
+    function addCkass() {
+        for(var i = 0; i <buttons.length; i++){
+            buttons[i].addEventListener('click',function () {
+                if (!this.classList.contains('active')){
+                    removeClass();
+                    this.classList.add('active')
+                } else removeClass()
+            })
         }
-    }}
+    }
+
+    function removeClass() {
+        for (var i = 0; i<buttons.length;i++){
+            buttons[i].classList.remove('active')
+        }
+    }
+    resetAllCLases();
+    function resetAllCLases() {
+
+        document.addEventListener('click', function () {
+            var activeButton = document.querySelector('.button.active');
+            if(event.target!==activeButton){
+                console.log('ага');
+                removeClass()
+            }
+        })
+    }
+}
+
 
 

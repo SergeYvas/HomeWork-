@@ -57,7 +57,16 @@
   }
 }
 
+.navigation_item.active{
+    &>a{
+      background-color: #31a5b7;
+    }
 
+    .navigation_list {
+      transform: scaleY(1);
+      height: 388px;
+    }
+}
 .navigation_item{
   &:hover{
     .navigation_list {

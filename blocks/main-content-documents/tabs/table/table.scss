@@ -1,3 +1,9 @@
+.document-table_item{
+  margin-bottom: 33px;
+  &:last-child{
+    margin-bottom: 0;
+  }
+}
 .document-table {
   @include source-Sans-Pro(700);
   font-size: 14px;
@@ -56,11 +62,13 @@ th:first-child {
   }
 }
 
-.documents-table_titel{
+.documents-table_title{
   @include oswald(400);
   font-size: 24px;
   text-transform: uppercase;
-  margin-left: 14px;
+  padding-left: 14px;
+  transition: $main-transition;
+  margin-bottom: 10px;
 }
 .mark{
   box-sizing: border-box;

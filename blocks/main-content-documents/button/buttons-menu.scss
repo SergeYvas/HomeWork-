@@ -10,8 +10,8 @@
     transform: scaleY(0);
     }
 }
-.button_item.active{
-  &>.button-menu_list{
+.button.active{
+  &+.button-menu_list{
     z-index: 1;
     background-color: white;
     transform: scaleY(1);

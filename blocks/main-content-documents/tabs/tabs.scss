@@ -4,6 +4,7 @@
   flex-direction: column;
   flex: 1;
   border: 1px solid #666666;
+  overflow: hidden;
 
 }
 .tabs_trigger-group{
@@ -12,10 +13,6 @@
   align-content: flex-start;
   align-items: center;
   background-color: #666666;
-  &:first-child{
-    transform: translateX(-0.6px);
-
-  }
 }
 .tabs_trigger-item.active{
   .tabs_button{
@@ -40,6 +37,7 @@
   }
 }
 .tabs_content{
+  padding-top: 14px;
   position: absolute;
   visibility: hidden;
 }
