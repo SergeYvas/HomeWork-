@@ -14,12 +14,12 @@
   align-items: center;
   background-color: #666666;
 }
-.tabs_trigger-item.active{
-  .tabs_button{
+
+  .tabs_button.active{
     background-color: white;
     color: #666666;
   }
-}
+
 .tabs_button{
   display: block;
   text-transform: uppercase;
@@ -37,12 +37,15 @@
   }
 }
 .tabs_content{
+  transform-origin: 100% 0;
+  transform: scaleY(0);
   padding-top: 14px;
   position: absolute;
-  visibility: hidden;
+  opacity:0;
+  transition: .2s transform, .4s opacity;
 }
 .tabs_content.active{
+  transform: scaleY(1);
   position: relative;
-  visibility: visible;
-
+  opacity:1;
 }
