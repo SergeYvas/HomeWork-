@@ -9,7 +9,7 @@ filterOnChilde(document.getElementsByClassName("button-menu_item"));
 buttonsMenu();
 noUrl(document.getElementsByClassName('button'));
 noUrl(document.getElementsByClassName('tabs_button'));
-
+navMenu();
 
 
 function filterOnChilde(data) {
@@ -33,21 +33,31 @@ function noUrl(data) {
 
 
 
-
-
-
-
+function navMenu() {
+    var navItems = document.querySelectorAll('.navigation_item');
+    for(var i = 0; i < navItems.length; i++){
+        navItems[i].addEventListener('click', function () {
+            if (!this.classList.contains('active')){
+                for (var i = 0; i < navItems.length;i++){
+                    navItems[i].classList.remove('active');
+                }
+                this.classList.add('active');
+            } else {
+                this.classList.toggle("active");
+            }
+        })
+    }
+}
 
 
 function buttonsMenu() {
 
-
     var buttons = document.getElementsByClassName('button');
-    console.log(buttons);
-    addCkass();
-    function addCkass() {
-        for(var i = 0; i <buttons.length; i++){
-            buttons[i].addEventListener('click',function () {
+
+    toggelClass();
+    function toggelClass() {
+        for(var i = 0; i < buttons.length; i++){
+            buttons[i].addEventListener('click', function () {
                 if (!this.classList.contains('active')){
                     removeClass();
                     this.classList.add('active')
@@ -56,22 +66,22 @@ function buttonsMenu() {
         }
     }
 
+
     function removeClass() {
-        for (var i = 0; i<buttons.length;i++){
+        for (var i = 0; i < buttons.length;i++){
             buttons[i].classList.remove('active')
         }
     }
-    resetAllCLases();
-    function resetAllCLases() {
 
+
+    (function() {
         document.addEventListener('click', function () {
             var activeButton = document.querySelector('.button.active');
             if(event.target!==activeButton){
-                console.log('ага');
                 removeClass()
             }
         })
-    }
+    })()
 }
 
 

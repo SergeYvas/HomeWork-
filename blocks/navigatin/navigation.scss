@@ -5,7 +5,7 @@
 }
 
 .navigation_list{
-  transition: $main-transition;
+  transition: .2s;
 }
 
 .navigation_link{
@@ -21,7 +21,7 @@
   text-align: left;
   text-decoration: none;
   padding-right:1px;
-  transition: $main-transition;
+  transition: .2s;
   padding-left: 10px;
   &:hover{
     background-color: #31a5b7;
@@ -64,26 +64,33 @@
 
     .navigation_list {
       transform: scaleY(1);
-      height: 388px;
+      .navigation_link{
+        height: 47px;
+        border-bottom: 1px solid #e1f6f9;
+      }
     }
 }
 .navigation_item{
   &:hover{
     .navigation_list {
       transform: scaleY(1);
-      height: 388px;
+      .navigation_link{
+        height: 47px;
+        border-bottom: 1px solid #e1f6f9;
+      }
     }
   }
 
   .navigation_list{
-    height: 0;
     background-color: #e1f6f9;
     transform: scaleY(0);
     transform-origin: 100% 0;
     animation-timing-function: ease-in-out;
     .navigation_link {
-      border-bottom: 1px solid #e1f6f9;
+      border-bottom: none;
       color: #7a7a7a;
+      height: 0;
+
       &:hover {
         background-color: #f0fafc;
       }
