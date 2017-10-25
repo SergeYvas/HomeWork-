@@ -25,9 +25,8 @@ function noUrl(data) {
 
 
 function removeClass(data) {
-    for (let i = 0; i < data.length; i++) {
+    for (let i = 0; i < data.length; i++)
         data[i].classList.remove('active');
-    }
 }
 
 ///////////////////////////////////
@@ -65,7 +64,9 @@ function tabs() {
                     if (target === tabsButton[i]) {
                         showContent(i);
                         break;
-                    }}}
+                    }
+                }
+            }
         });
     }
 
@@ -124,9 +125,9 @@ function buttonsMenu() {
     (()=> {
     document.addEventListener('click', function () {
         let activeButton = document.querySelector('.button.active');
-        if (event.target !== activeButton) {
-            removeClass(buttons);
-        }
+
+        if (event.target !== activeButton) removeClass(buttons);
+
     });
 })();
 }
@@ -134,8 +135,6 @@ function buttonsMenu() {
 
 function filterOnChilde(data) {
     for (let i = 0; i < data.length; i++) {
-        if (data[i].childElementCount > 1) {
-            data[i].classList.add('share');
-        }
+        if (data[i].childElementCount > 1) data[i].classList.add('share');
     }
 }
