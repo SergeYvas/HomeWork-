@@ -11,12 +11,14 @@ global.$ = {
          plumber : require('gulp-plumber'),
      browserSync : require('browser-sync').create(),
           uglify : require('gulp-uglify'),
+           babel : require('gulp-babel'),
+           rename: require('gulp-rename'),
 
     path:{
            tasks : require('./gulp/config/tasks.js')
     }
 };
-$.path.tasks.forEach(function (taskPath) {
+$.path.tasks.forEach( (taskPath)=> {
     require(taskPath)();
 });
 

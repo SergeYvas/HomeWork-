@@ -1,7 +1,7 @@
-module.exports = function () {
-    $.gulp.task('compress', function (cb) {
-        $.gulp.src('app/js/*.js')
+module.exports = () => {
+    $.gulp.task('compress', () =>{
+        $.gulp.src('app/js/main.js')
         .pipe($.uglify())
-        .pipe(gulp.dest('buld/js'))
+        .pipe($.gulp.dest('build/js'))
     })
 };
