@@ -10,6 +10,7 @@ global.$ = {
           notify : require('gulp-notify'),
          plumber : require('gulp-plumber'),
      browserSync : require('browser-sync').create(),
+          uglify : require('gulp-uglify'),
 
     path:{
            tasks : require('./gulp/config/tasks.js')
@@ -17,7 +18,7 @@ global.$ = {
 };
 $.path.tasks.forEach(function (taskPath) {
     require(taskPath)();
-})
+});
 
 $.gulp.task('default', $.gulp.series(
     $.gulp.parallel('pug','sass'),

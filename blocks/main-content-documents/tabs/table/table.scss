@@ -5,9 +5,11 @@
   }
 }
 .document-table {
+  min-width: 100%;
   @include source-Sans-Pro(700);
   font-size: 14px;
   color: black;
+
   th, td {
     text-align: left;
     min-width: 85px;

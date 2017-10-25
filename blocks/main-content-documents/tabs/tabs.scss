@@ -42,7 +42,7 @@
   padding-top: 14px;
   position: absolute;
   opacity:0;
-  transition: .2s transform, .4s opacity;
+  transition: .4s opacity;
 }
 .tabs_content.active{
   transform: scaleY(1);
